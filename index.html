@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reaction Simulator</title>
+        <style>
+            .center{width:fit-content;margin-left:auto;margin-right:auto}
+            div{padding:5px;background-color: #444;}
+            h4{margin-bottom:5px;margin-top:5px}/*reduce margins*/
+            p{margin-bottom:10px;margin-top:10px}
+            .hidden{display:none}
+            .label{margin-bottom:0px;margin-top:3px}
+            input{margin-bottom:0px;height:100%}
+            .slider{width:70%;margin:0px}
+            .numin{width:20%;margin:0px;bottom:5px;left:5px;position:relative;padding:0px}
+            .container{padding:0px;margin:0px}
+            .involves-box{background-color: #000;display:inline}
+        </style>
+    </head>
+    <body style="background-color: #333;color:#fff">
+
+        <div class="center" style="padding:10px;display:flex">
+            <tr>
+                <td>
+                    <div></div>
+                </td>
+                <td>
+                    <canvas id="canvas-main"></canvas>
+                </td>
+                <td>
+                    <div style="margin:10px;background-color: #222;width:100%">
+                        <!-- <h4>Temperature</h4>
+                        <p>Average Temperature: <span id="total-temp"></span></p>
+                        <h4>Pressure</h4>
+                        <p>Average Pressure: <span id="total-pressure"></span></p> -->
+                        <!-- <p>Gauge Pressure: <span id="gauge-pressure"></span></p> -->
+                        <p class="label">Select Scenario</p>
+                        <select id="select-scenario"></select>
+                        <div id="div-scenario" style="margin-top:6px">
+                            <h4>Scenario: <span id="label-scenario"></span></h4>
+                            <div id="div-scenario-involves" style="margin:0px"></div>
+                            <div id="div-scenario-options"></div>
+                            <button id="button-start-stop" onclick="canvas.toggleSim()">Start Simulation</button>
+                            <button id="button-pause-resume" onclick="canvas.pauseSim()">Pause Sim.</button>
+                            <br>
+                            <span style="margin:4px">Simple molecules
+                                <input id="checkbox-particle-view" type="checkbox"
+                                onclick="config.drawMolecules=!config.drawMolecules;canvas.clearScreen();phys.display()" style="position:relative;top:1px;right:3px">
+                            </span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div style="margin:10px;background-color: #222;width:100%">
+                        <div id="div-scenario" style="margin-top:6px">
+                            <div id="div-scenario-graphs">
+                                <div id="div-graph-one" class='hidden' style="padding:0px;margin:0px">
+                                    <p id="label-graph-one" class="label"></p>
+                                    <canvas width="280" height="150" id="canvas-graph-one"></canvas>
+                                </div>
+                                <div id="div-graph-two" class='hidden' style="padding:0px;margin:0px">
+                                    <p id="label-graph-two" class="label"></p>
+                                    <canvas width="280" height="150" id="canvas-graph-two"></canvas>
+                                </div>
+                                <div id="div-graph-three" class='hidden' style="padding:0px;margin:0px">
+                                    <p id="label-graph-three" class="label"></p>
+                                    <canvas width="280" height="150" id="canvas-graph-three"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </div>
+        <!-- <div class="center" id="main-controls">
+            Gravity: <input type="range" value="2" min="0" max="20" id="gravity-slider" oninput="config.gravity = Number(this.value/100);phys.updateEnergy()">
+            Energy Correction: <input type="checkbox" checked="true" oninput="config.energyCorrection = this.checked">
+        </div> -->
+
+        <script src="util.js"></script>
+
+        
+        <script src="classes/Reaction.js"></script>
+        <script src="classes/Particle.js"></script>
+        <script src="classes/Graph.js"></script>
+        <script src="classes/Scenario.js"></script>
+        <script src="classes/Modifier.js"></script>
+        <script src="classes/molecules.js"></script>
+
+        
+        <script src="canvas.js"></script>
+        <script src="physics.js"></script>
+        <script src="chemistry.js"></script>
+        <script src="main.js"></script>
+        
+        <script src="scenarios.js"></script>
+
+        <script src="persistence.js"></script>
+
+
+    </body>
+</html>
