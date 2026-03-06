@@ -1,0 +1,59 @@
+.center {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto
+}
+
+div {
+    padding: 5px;
+    background-color: #444;
+}
+
+h4 {
+    margin-bottom: 5px;
+    margin-top: 5px
+}
+
+/*reduce margins*/
+p {
+    margin-bottom: 10px;
+    margin-top: 10px
+}
+
+.hidden {
+    display: none
+}
+
+.label {
+    margin-bottom: 0px;
+    margin-top: 3px
+}
+
+input {
+    margin-bottom: 0px;
+    height: 100%
+}
+
+.slider {
+    width: 70%;
+    margin: 0px
+}
+
+.numin {
+    width: 20%;
+    margin: 0px;
+    bottom: 5px;
+    left: 5px;
+    position: relative;
+    padding: 0px
+}
+
+.container {
+    padding: 0px;
+    margin: 0px
+}
+
+.involves-box {
+    background-color: #000;
+    display: inline
+}

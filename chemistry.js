@@ -18,9 +18,10 @@
 
 const atoms = {
 
+    // Atom(name, color, radius)
+
     // pixels radius =/= actual physical radius in real life
     // hydrogen => 53 picometers, carbon => ~70 (very little difference, not visually good)
-
     empty:new Atom("Emptium", "#00000000", 0),// for a slot which is empty (ch3*)
     oxygen:new Atom("Oxygen", "#ff0000", 7),
     hydrogen:new Atom("Hydrogen", "#dddddd", 4),
@@ -29,6 +30,9 @@ const atoms = {
 }
 
 const molecules = [// all the properties of each particle type
+
+    // Molecule(name, mass, boiling point, melting point, central atom, radial atoms (list), color)
+
     // 0
     new Molecule("H2O", 18, 373, 273, atoms.oxygen, [atoms.hydrogen, atoms.hydrogen], "#7777dd"),
     //1-3
@@ -36,7 +40,7 @@ const molecules = [// all the properties of each particle type
     new Molecule("Cl2", 70, 332, 266, atoms.chlorine, [atoms.chlorine], "#55ee55"),
     new Molecule("HCl", 36, 373, 273, atoms.chlorine, [atoms.hydrogen], "#669966"),
     //4-8
-    new Molecule("CH4", 16, 200, 100, atoms.carbon, [atoms.hydrogen,atoms.hydrogen,atoms.hydrogen,atoms.hydrogen], "#ffbb55"),
+    new Molecule("CH4", 16, 200, 100, atoms.carbon, [atoms.hydrogen, atoms.hydrogen, atoms.hydrogen, atoms.hydrogen], "#ffbb55"),
     new Molecule("O2", 32, 130, 70, atoms.oxygen, [atoms.oxygen], "#88ffff"),
     new Molecule("CO2", 44, 260, 250, atoms.carbon, [atoms.oxygen, atoms.oxygen], "#aaaaaa"),
     new Molecule("C", 12, 2000, 1000, atoms.carbon, [], "#666666"),
@@ -60,6 +64,9 @@ const molecules = [// all the properties of each particle type
 ]
 
 const reactions = [// list of all reactions which are supported, to be checked against on particle collision
+
+    // Reaction(reactants (list of 2), products (list), enthalpy, arrhenius factor)
+
     // hydrogen chloride formation
     new Reaction([1,2], [3,3], -184, 0.1), //H2+Cl2->2HCl
     

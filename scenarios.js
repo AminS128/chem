@@ -1,4 +1,7 @@
 const scenarios = [
+
+    // Scenario(name, modifiers (list), molecules involved (list), loadfunction (callback), updatefunction (callback))
+
     new Scenario("Water in a box", [
         new Modifier("Particle Amount", 'range', {max:250,min:100,default:200,valueName:'amount'}),
         new Modifier("Energy Distribution", 'graph', {eleTag:'canvas-graph-one',valueName:'energy-graph',type:2,labelAxes:false}),
@@ -284,7 +287,7 @@ function loadScenario(id, values = {}){
         if(typeof ogv != 'object'){
             scen.values[valuelist[i]] = ogv
         }else{ // this is a graph object, whose reference was stored in values before serialization
-            scen.values[valuelist[i]] = new Graph(ogv.tag, ogv.type /*, ogv.data */) // does not use data backup
+            scen.values[valuelist[i]] = new Graph(ogv.tag, ogv.type , ogv.data ) // uses data backup
         }
     }
     
